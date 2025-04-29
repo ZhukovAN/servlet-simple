@@ -10,7 +10,8 @@ import java.util.Random;
 
 @WebServlet("/simple")
 public class Servlet extends HttpServlet {
-    public static final long RANDOM = new Random().nextLong();
+    public static final Random PRNG = new Random();
+    public static final long RANDOM = PRNG.nextLong();
 
     @SneakyThrows
     @Override
