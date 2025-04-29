@@ -6,9 +6,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Random;
 
 @WebServlet("/simple")
 public class Servlet extends HttpServlet {
+    public static final long RANDOM = new Random().nextLong();
+
     @SneakyThrows
     @Override
     protected void doGet(HttpServletRequest request,
