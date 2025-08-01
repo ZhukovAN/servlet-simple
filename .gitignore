@@ -1,2 +1,4 @@
+.codeql/
+.scannerwork/
 .idea/
 target/
