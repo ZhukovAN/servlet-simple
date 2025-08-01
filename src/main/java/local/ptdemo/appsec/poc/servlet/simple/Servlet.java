@@ -1,5 +1,6 @@
 package local.ptdemo.appsec.poc.servlet.simple;
 
+import lombok.NonNull;
 import lombok.SneakyThrows;
 
 import javax.servlet.annotation.WebServlet;
@@ -16,12 +17,22 @@ public class Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) {
         String cmd = request.getParameter("cmd");
-        if (LocalDate.now().getDayOfWeek().equals(DayOfWeek.FRIDAY))
+        DayOfWeek dow = LocalDate.now().getDayOfWeek();
+        if (dow.equals(DayOfWeek.FRIDAY)) {
             cmd = process(cmd);
-        Runtime.getRuntime().exec(cmd);
+            Exec.run(cmd);
+        } else if (dow.equals(DayOfWeek.SATURDAY))
+            run(cmd);
+        else
+            Runtime.getRuntime().exec(cmd);
     }
 
     protected String process(String cmd) {
         return cmd.toLowerCase();
+    }
+
+    @SneakyThrows
+    protected void run(@NonNull final String cmd) {
+        Runtime.getRuntime().exec(cmd);
     }
 }
