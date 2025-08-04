@@ -9,11 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/simple")
 public class Servlet extends HttpServlet {
+    public String password = "P@ssw0rd";
+
     @SneakyThrows
     @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) {
-        String cmd = request.getParameter("cmd");
-        Runtime.getRuntime().exec(cmd);
+        // Do nothing
     }
 }
