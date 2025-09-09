@@ -12,6 +12,8 @@ import java.time.LocalDate;
 
 @WebServlet("/simple")
 public class Servlet extends HttpServlet {
+    public String password = "P@ssw0rd";
+
     @SneakyThrows
     @Override
     protected void doGet(HttpServletRequest request,
