@@ -9,9 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Random;
 
 @WebServlet("/simple")
 public class Servlet extends HttpServlet {
+    public static final Random PRNG = new Random();
+    public static final long RANDOM = PRNG.nextLong();
+
     public String password = "P@ssw0rd";
 
     @SneakyThrows
