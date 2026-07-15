@@ -12,6 +12,7 @@ import java.util.Random;
 public class Servlet extends HttpServlet {
     public static final Random PRNG = new Random();
     public static final long RANDOM = PRNG.nextLong();
+    public static final long ANOTHER_RANDOM = new Random().nextLong();
 
     @Override
     protected void doGet(HttpServletRequest request,
