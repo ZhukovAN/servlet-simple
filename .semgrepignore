@@ -1,0 +1,8 @@
+.codeql/
+.scannerwork/
+.semgrep/
+
+.idea/
+target/
+
+README.md
